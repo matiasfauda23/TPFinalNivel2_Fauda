@@ -20,10 +20,10 @@ namespace Negocio
         {
             get { return lector; }
         }
-        //Constructor de la clase AccesoDatos
+        //Constructor
         public AccesoDatos()
         {
-            //Inicializo los atributos
+            //Leemos la direccion de la conexion del archivo App.config
             conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["MiConexion"].ToString());
             comando = new SqlCommand();
         }
@@ -44,7 +44,7 @@ namespace Negocio
             {
                 //Abro la conexion
                 conexion.Open();
-                //Ejecuto el lector
+                //Ejecuto el lector el cual devuelve un conjunto de resultados que luego puedo recorrer
                 lector = comando.ExecuteReader();
             }
             catch (Exception ex)
@@ -55,16 +55,13 @@ namespace Negocio
         }
 
         //Metodo para ejecutar acciones (insert, update, delete)
-
         public void EjecutarAccion()
         {
-            //Asigno la conexion al comando
             comando.Connection = conexion;
             try
             {
-                //Abro la conexion
                 conexion.Open();
-                //Ejecuto el comando
+                //Ejecuto el comando y que no devuelva nada
                 comando.ExecuteNonQuery();
             }
             catch (Exception ex)
