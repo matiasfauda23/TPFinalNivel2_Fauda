@@ -21,7 +21,7 @@ namespace presentacion
             InitializeComponent();
         }
 
-        private void FormCatalogo_Load(object sender, EventArgs e)
+        private void FrmCatalogo_Load(object sender, EventArgs e)
         {
             cargar();
         }
@@ -56,6 +56,22 @@ namespace presentacion
             {
                 pbxArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
+        }
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            //Verifico que la fila actual no sea nula
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.ImagenUrl);
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+           FrmAltaArticulo alta = new FrmAltaArticulo();
+            alta.ShowDialog();
+            cargar();
         }
     }
 }
