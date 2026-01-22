@@ -75,6 +75,7 @@ namespace Negocio
                 datos.SetearParametro("@idCategoria", nuevo.Categoria.Id);
                 datos.SetearParametro("@img", nuevo.ImagenUrl);
                 datos.SetearParametro("@precio", nuevo.Precio);
+
                 datos.EjecutarAccion();
             }
             catch (Exception ex)

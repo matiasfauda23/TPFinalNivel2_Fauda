@@ -114,11 +114,39 @@ namespace presentacion
             return false;
         }
 
-        
-            
-            
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+         ArticuloNegocio negocio = new ArticuloNegocio();
 
+            try
+            {
+             if(validarAlta())
+                {
+                    MessageBox.Show("Debe cargar los campos obligatorios");
+                    return;
+                }
+                Articulo nuevo = new Articulo();
+                nuevo.Codigo = txtCodigo.Text;
+                nuevo.Nombre = txtNombre.Text;
+                nuevo.Descripcion = txtDescripcion.Text;
+                nuevo.Precio = decimal.Parse(txtPrecio.Text);
+                nuevo.ImagenUrl = txtUrlImagen.Text;
+                nuevo.Marca = (Marca)cboMarca.SelectedItem;
+                nuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
 
+                //Guardamos en la base de datos
+                negocio.agregar(nuevo);
 
+                MessageBox.Show("Articulo agregado exitosamente.");
+
+                Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

@@ -129,6 +129,7 @@
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(100, 22);
             this.txtUrlImagen.TabIndex = 9;
+            this.txtUrlImagen.Leave += new System.EventHandler(this.txtUrlImagen_Leave);
             // 
             // txtPrecio
             // 
@@ -162,6 +163,7 @@
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
             // 
             // btnCancelar
             // 
@@ -182,9 +184,9 @@
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(493, 65);
+            this.pbxArticulo.Location = new System.Drawing.Point(497, 43);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(225, 259);
+            this.pbxArticulo.Size = new System.Drawing.Size(527, 463);
             this.pbxArticulo.TabIndex = 17;
             this.pbxArticulo.TabStop = false;
             // 
@@ -192,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1078, 583);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.btnCancelar);

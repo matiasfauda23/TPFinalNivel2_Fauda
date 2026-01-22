@@ -10,9 +10,9 @@ namespace Negocio
     public class CategoriaNegocio
     {
         //Metodo para listar las categorias de productos
-        public List<Marca> listar()
+        public List<Categoria> listar()
         {
-            List<Marca> lista = new List<Marca>();
+            List<Categoria> lista = new List<Categoria>();
             AccesoDatos datos = new AccesoDatos();
 
             try
@@ -24,7 +24,7 @@ namespace Negocio
                     Categoria aux = new Categoria();
                     aux.Id = (int)datos.Lector["Id"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    return lista;
+                    lista.Add(aux);
                 }
                 return lista;
             }
