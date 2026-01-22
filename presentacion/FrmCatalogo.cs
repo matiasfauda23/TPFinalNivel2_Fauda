@@ -103,5 +103,36 @@ namespace presentacion
         {
             cargar();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+            try
+            {
+                //Verifico que la fila actual no sea nula
+                if(dgvArticulos.CurrentRow == null)
+                {
+                    MessageBox.Show("No hay ningun articulo seleccionado");
+                    return;
+                }
+             //Preguntar confirmacion
+             DialogResult respuesta = MessageBox.Show("¿Seguro que desea eliminar el articulo seleccionado?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(respuesta == DialogResult.No)
+                {
+                    return;
+                }
+                //Si la respuesta es si lo elimino
+                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                negocio.eliminar(seleccionado.Id);
+                cargar();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
