@@ -24,7 +24,7 @@ namespace Negocio
         public AccesoDatos()
         {
             //Leemos la direccion de la conexion del archivo App.config
-            conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["MiConexion"].ToString());
+            conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["cadenaConexion"].ConnectionString);
             comando = new SqlCommand();
         }
 

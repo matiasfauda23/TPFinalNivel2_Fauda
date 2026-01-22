@@ -60,6 +60,7 @@ namespace presentacion
                 nuevoArticulo.Nombre = txtNombre.Text;
                 nuevoArticulo.Descripcion = txtDescripcion.Text;
                 nuevoArticulo.Precio = decimal.Parse(txtPrecio.Text);
+                nuevoArticulo.ImagenUrl = txtUrlImagen.Text;
                 nuevoArticulo.Marca = (Marca)cboMarca.SelectedItem;
                 nuevoArticulo.Categoria = (Categoria)cboCategoria.SelectedItem;
                 //Llamo al metodo agregar de negocio
@@ -93,6 +94,7 @@ namespace presentacion
                 pbxArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
         }
+
         private bool validarAlta()
         {
             //Valido campos vacios
