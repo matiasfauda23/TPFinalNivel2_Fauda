@@ -46,7 +46,31 @@ namespace presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-         
+         if(validarAlta())
+            {
+                return;
+            }
+            //Creo el objeto articulo y negocio
+            Articulo nuevoArticulo = new Articulo();
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                //Cargo el objeto nuevoArticulo con los datos del formulario
+                nuevoArticulo.Codigo = txtCodigo.Text;
+                nuevoArticulo.Nombre = txtNombre.Text;
+                nuevoArticulo.Descripcion = txtDescripcion.Text;
+                nuevoArticulo.Precio = decimal.Parse(txtPrecio.Text);
+                nuevoArticulo.Marca = (Marca)cboMarca.SelectedItem;
+                nuevoArticulo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                //Llamo al metodo agregar de negocio
+                negocio.agregar(nuevoArticulo);
+                MessageBox.Show("Articulo agregado exitosamente.");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private bool validarAlta()
