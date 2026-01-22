@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace presentacion
 {
@@ -15,6 +17,31 @@ namespace presentacion
         public FrmAltaArticulo()
         {
             InitializeComponent();
+        }
+
+        private void FrmAltaArticulo_Load(object sender, EventArgs e)
+        {
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+
+            try
+            {
+                //Llenamos el comboBox de Marcas
+                cboMarca.DataSource = marcaNegocio.listar();
+                //ValueMember es el valor interno
+                cboMarca.ValueMember = "Id";
+                //DisplayMember es lo que se muestra
+                cboMarca.DisplayMember = "Descripcion";
+
+                cboCategoria.DataSource = categoriaNegocio.listar();
+                cboCategoria.ValueMember = "Id";
+                cboCategoria.DisplayMember = "Descripcion";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
