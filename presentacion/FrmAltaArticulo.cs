@@ -73,6 +73,26 @@ namespace presentacion
             }
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtUrlImagen.Text);
+        }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception)
+            {
+                pbxArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
         private bool validarAlta()
         {
             //Valido campos vacios
@@ -91,6 +111,8 @@ namespace presentacion
             //Si paso todo, entonces esta bien
             return false;
         }
+
+        
             
             
 
