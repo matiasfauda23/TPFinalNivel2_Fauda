@@ -43,5 +43,34 @@ namespace presentacion
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private bool validarAlta()
+        {
+            //Valido campos vacios
+            if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtNombre.Text))
+            {
+                MessageBox.Show("Por favor, completa los campos obligatorios (Código y Nombre).");
+                //Devuelvo true si hay un error
+                return true; 
+            }
+            //Valido numeros
+            if (!decimal.TryParse(txtPrecio.Text, out _))
+            {
+                MessageBox.Show("El precio debe ser numérico.");
+                return true;
+            }
+            //Si paso todo, entonces esta bien
+            return false;
+        }
+            
+            
+
+
+
     }
 }
