@@ -73,5 +73,35 @@ namespace presentacion
             alta.ShowDialog();
             cargar();
         }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltro.Text;
+
+            if(filtro.Length >= 2)
+            {
+                listaFiltrada = listaArticulo.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                //Si borro el filtro, vuelvo a cargar la lista original
+                listaFiltrada = listaArticulo;
+            }
+            //Limpio y recargo la grilla
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
+            ocultarColumnas();
+        }
+        private void ocultarColumnas()
+        {
+            dgvArticulos.Columns["ImagenUrl"].Visible = false;
+            dgvArticulos.Columns["Id"].Visible = false;
+        }
+
+        private void FrmCatalogo_Load_1(object sender, EventArgs e)
+        {
+            cargar();
+        }
     }
 }

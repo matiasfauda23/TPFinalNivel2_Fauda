@@ -30,7 +30,7 @@ namespace presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -49,17 +49,18 @@ namespace presentacion
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtFiltro
             // 
-            this.textBox1.Location = new System.Drawing.Point(370, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(320, 22);
-            this.textBox1.TabIndex = 0;
+            this.txtFiltro.Location = new System.Drawing.Point(370, 23);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(320, 22);
+            this.txtFiltro.TabIndex = 0;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(297, 26);
+            this.lblFiltro.Location = new System.Drawing.Point(256, 29);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(81, 16);
             this.lblFiltro.TabIndex = 1;
@@ -74,6 +75,7 @@ namespace presentacion
             this.dgvArticulos.RowTemplate.Height = 24;
             this.dgvArticulos.Size = new System.Drawing.Size(564, 308);
             this.dgvArticulos.TabIndex = 2;
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // btnAgregar
             // 
@@ -199,9 +201,10 @@ namespace presentacion
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.lblFiltro);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtFiltro);
             this.Name = "FrmCatalogo";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FrmCatalogo_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
@@ -212,7 +215,7 @@ namespace presentacion
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.Button btnAgregar;
