@@ -65,6 +65,7 @@
     <Compile Include="FrmDetalleArticulo.Designer.cs">
       <DependentUpon>FrmDetalleArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAltaArticulo.resx">
       <DependentUpon>FrmAltaArticulo.cs</DependentUpon>

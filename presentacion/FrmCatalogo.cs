@@ -151,5 +151,25 @@ namespace presentacion
 
             }
         }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            //Validamos que haya seleccionado una fila
+            if (dgvArticulos.CurrentRow != null)
+            {
+                //Obtengo el articulo seleccionado
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                //Creo la ventana de detalle y le paso el articulo
+                FrmDetalleArticulo detalle = new FrmDetalleArticulo(seleccionado);
+
+                //Lo muestro
+                detalle.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un artículo para ver el detalle.");
+            }
+        }
     }
 }
