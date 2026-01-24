@@ -36,7 +36,6 @@ namespace presentacion
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEliminarLogico = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -79,7 +78,7 @@ namespace presentacion
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(795, 15);
+            this.btnAgregar.Location = new System.Drawing.Point(740, 65);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 44);
             this.btnAgregar.TabIndex = 3;
@@ -89,7 +88,7 @@ namespace presentacion
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(934, 15);
+            this.btnModificar.Location = new System.Drawing.Point(872, 65);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(99, 44);
             this.btnModificar.TabIndex = 4;
@@ -99,22 +98,13 @@ namespace presentacion
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(795, 65);
+            this.btnEliminar.Location = new System.Drawing.Point(992, 65);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 44);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnEliminarLogico
-            // 
-            this.btnEliminarLogico.Location = new System.Drawing.Point(934, 65);
-            this.btnEliminarLogico.Name = "btnEliminarLogico";
-            this.btnEliminarLogico.Size = new System.Drawing.Size(99, 44);
-            this.btnEliminarLogico.TabIndex = 6;
-            this.btnEliminarLogico.Text = "Eliminar Logico";
-            this.btnEliminarLogico.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -178,7 +168,7 @@ namespace presentacion
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(778, 133);
+            this.pbxArticulo.Location = new System.Drawing.Point(757, 133);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(302, 308);
             this.pbxArticulo.TabIndex = 14;
@@ -197,7 +187,6 @@ namespace presentacion
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnEliminarLogico);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -223,7 +212,6 @@ namespace presentacion
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnEliminarLogico;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
