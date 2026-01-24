@@ -14,9 +14,21 @@ namespace presentacion
 {
     public partial class FrmAltaArticulo : Form
     {
+        //Variable para guardar el articulo si es una modificacion
+        private Articulo articulo = null;
+       
+        //Constructor para agregar producto
         public FrmAltaArticulo()
         {
             InitializeComponent();
+        }
+        //Constructor para modificar producto
+        public FrmAltaArticulo(Articulo articuloSeleccionado)
+        {
+            InitializeComponent();
+            this.articulo = articuloSeleccionado;
+            Text = "Modificar Artículo";
+
         }
 
         private void FrmAltaArticulo_Load(object sender, EventArgs e)
@@ -36,6 +48,20 @@ namespace presentacion
                 cboCategoria.DataSource = categoriaNegocio.listar();
                 cboCategoria.ValueMember = "Id";
                 cboCategoria.DisplayMember = "Descripcion";
+
+                //Si el articulo es distinto de null, es una modificacion
+                if (articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtDescripcion.Text = articulo.Descripcion;
+                    txtPrecio.Text = articulo.Precio.ToString();
+                    txtUrlImagen.Text = articulo.ImagenUrl;
+                    cargarImagen(articulo.ImagenUrl);
+                    //Seleccionar la marca y categoria correspondiente en los combobox
+                    cboMarca.SelectedValue = articulo.Marca.Id;
+                    cboCategoria.SelectedValue = articulo.Categoria.Id;
+                }
             }
             catch (Exception ex)
             {
@@ -46,27 +72,43 @@ namespace presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-         if(validarAlta())
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            if (validarAlta())
             {
                 return;
             }
-            //Creo el objeto articulo y negocio
-            Articulo nuevoArticulo = new Articulo();
-            ArticuloNegocio negocio = new ArticuloNegocio();
+            
             try
             {
-                //Cargo el objeto nuevoArticulo con los datos del formulario
-                nuevoArticulo.Codigo = txtCodigo.Text;
-                nuevoArticulo.Nombre = txtNombre.Text;
-                nuevoArticulo.Descripcion = txtDescripcion.Text;
-                nuevoArticulo.Precio = decimal.Parse(txtPrecio.Text);
-                nuevoArticulo.ImagenUrl = txtUrlImagen.Text;
-                nuevoArticulo.Marca = (Marca)cboMarca.SelectedItem;
-                nuevoArticulo.Categoria = (Categoria)cboCategoria.SelectedItem;
-                //Llamo al metodo agregar de negocio
-                negocio.agregar(nuevoArticulo);
-                MessageBox.Show("Articulo agregado exitosamente.");
-                Close();
+
+                //Si la variable esta vacia, entonces es un alta
+                if (articulo == null)
+                {
+                    articulo = new Articulo();
+                }
+                
+                //Cargo el objeto articulo con los datos del formulario
+                articulo.Codigo = txtCodigo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Descripcion = txtDescripcion.Text;
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
+                articulo.ImagenUrl = txtUrlImagen.Text;
+                articulo.Marca = (Marca)cboMarca.SelectedItem;
+                articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
+
+                //Si el id es distinto de 0, es una modificacion
+                if (articulo.Id != 0)
+                {
+                    negocio.modificar(articulo);
+                    MessageBox.Show("Articulo modificado exitosamente");
+                }
+                else
+                {
+                    //Sino, es un alta
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Articulo agregado exitosamente");
+                }
             }
             catch (Exception ex)
             {
@@ -114,39 +156,5 @@ namespace presentacion
             return false;
         }
 
-        private void btnAceptar_Click_1(object sender, EventArgs e)
-        {
-         ArticuloNegocio negocio = new ArticuloNegocio();
-
-            try
-            {
-             if(validarAlta())
-                {
-                    MessageBox.Show("Debe cargar los campos obligatorios");
-                    return;
-                }
-                Articulo nuevo = new Articulo();
-                nuevo.Codigo = txtCodigo.Text;
-                nuevo.Nombre = txtNombre.Text;
-                nuevo.Descripcion = txtDescripcion.Text;
-                nuevo.Precio = decimal.Parse(txtPrecio.Text);
-                nuevo.ImagenUrl = txtUrlImagen.Text;
-                nuevo.Marca = (Marca)cboMarca.SelectedItem;
-                nuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
-
-                //Guardamos en la base de datos
-                negocio.agregar(nuevo);
-
-                MessageBox.Show("Articulo agregado exitosamente.");
-
-                Close();
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.ToString());
-            }
-        }
     }
 }

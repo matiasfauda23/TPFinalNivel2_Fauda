@@ -116,8 +116,8 @@ namespace presentacion
                     MessageBox.Show("No hay ningun articulo seleccionado");
                     return;
                 }
-             //Preguntar confirmacion
              DialogResult respuesta = MessageBox.Show("¿Seguro que desea eliminar el articulo seleccionado?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
                 if(respuesta == DialogResult.No)
                 {
                     return;
@@ -132,6 +132,23 @@ namespace presentacion
             {
 
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow != null)
+            {
+                //Obtengo el objeto que selecciono
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                FrmAltaArticulo modificar = new FrmAltaArticulo(seleccionado);
+                modificar.ShowDialog();
+                cargar();
+            }
+            else
+            {
+                MessageBox.Show("No hay ningun articulo seleccionado");
+
             }
         }
     }
