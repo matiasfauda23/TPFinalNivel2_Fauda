@@ -24,6 +24,10 @@ namespace presentacion
         private void FrmCatalogo_Load(object sender, EventArgs e)
         {
             cargar();
+            cboCampo.Items.Add("Precio");
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Descripcion");
+
         }
 
         private void cargar()
@@ -99,10 +103,7 @@ namespace presentacion
             dgvArticulos.Columns["Id"].Visible = false;
         }
 
-        private void FrmCatalogo_Load_1(object sender, EventArgs e)
-        {
-            cargar();
-        }
+        
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -169,6 +170,28 @@ namespace presentacion
             else
             {
                 MessageBox.Show("Por favor, seleccione un artículo para ver el detalle.");
+            }
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboCampo.SelectedItem.ToString();
+
+            //Si cambio de campo, validamos que mostrar en criterio
+            if(opcion == "Precio")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Igual a");
+            }
+            //Tanto el criterio Nombre como Descripcion se filtran de la misma manera
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
             }
         }
     }

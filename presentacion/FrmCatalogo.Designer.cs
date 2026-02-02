@@ -31,18 +31,18 @@ namespace presentacion
         private void InitializeComponent()
         {
             this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.lblFiltro = new System.Windows.Forms.Label();
+            this.lblFiltroRapido = new System.Windows.Forms.Label();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.lblCampo = new System.Windows.Forms.Label();
+            this.cboCampo = new System.Windows.Forms.ComboBox();
+            this.lblCriterio = new System.Windows.Forms.Label();
+            this.cboCriterio = new System.Windows.Forms.ComboBox();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.btnDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
@@ -57,14 +57,14 @@ namespace presentacion
             this.txtFiltro.TabIndex = 0;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
-            // lblFiltro
+            // lblFiltroRapido
             // 
-            this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(256, 29);
-            this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(81, 16);
-            this.lblFiltro.TabIndex = 1;
-            this.lblFiltro.Text = "FiltroRapido";
+            this.lblFiltroRapido.AutoSize = true;
+            this.lblFiltroRapido.Location = new System.Drawing.Point(256, 29);
+            this.lblFiltroRapido.Name = "lblFiltroRapido";
+            this.lblFiltroRapido.Size = new System.Drawing.Size(81, 16);
+            this.lblFiltroRapido.TabIndex = 1;
+            this.lblFiltroRapido.Text = "FiltroRapido";
             // 
             // dgvArticulos
             // 
@@ -107,65 +107,66 @@ namespace presentacion
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // label2
+            // lblCampo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 495);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
+            this.lblCampo.AutoSize = true;
+            this.lblCampo.Location = new System.Drawing.Point(80, 495);
+            this.lblCampo.Name = "lblCampo";
+            this.lblCampo.Size = new System.Drawing.Size(54, 16);
+            this.lblCampo.TabIndex = 7;
+            this.lblCampo.Text = "Campo:";
             // 
-            // comboBox1
+            // cboCampo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(150, 492);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 8;
+            this.cboCampo.FormattingEnabled = true;
+            this.cboCampo.Location = new System.Drawing.Point(150, 492);
+            this.cboCampo.Name = "cboCampo";
+            this.cboCampo.Size = new System.Drawing.Size(121, 24);
+            this.cboCampo.TabIndex = 8;
+            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
             // 
-            // label3
+            // lblCriterio
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(320, 495);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "label3";
+            this.lblCriterio.AutoSize = true;
+            this.lblCriterio.Location = new System.Drawing.Point(320, 495);
+            this.lblCriterio.Name = "lblCriterio";
+            this.lblCriterio.Size = new System.Drawing.Size(52, 16);
+            this.lblCriterio.TabIndex = 9;
+            this.lblCriterio.Text = "Criterio:";
             // 
-            // comboBox2
+            // cboCriterio
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(370, 492);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 10;
+            this.cboCriterio.FormattingEnabled = true;
+            this.cboCriterio.Location = new System.Drawing.Point(370, 492);
+            this.cboCriterio.Name = "cboCriterio";
+            this.cboCriterio.Size = new System.Drawing.Size(121, 24);
+            this.cboCriterio.TabIndex = 10;
             // 
-            // label4
+            // lblFiltro
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(547, 498);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "label4";
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(547, 498);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(39, 16);
+            this.lblFiltro.TabIndex = 11;
+            this.lblFiltro.Text = "Filtro:";
             // 
-            // comboBox3
+            // cboFiltro
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(631, 495);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 12;
+            this.cboFiltro.FormattingEnabled = true;
+            this.cboFiltro.Location = new System.Drawing.Point(631, 495);
+            this.cboFiltro.Name = "cboFiltro";
+            this.cboFiltro.Size = new System.Drawing.Size(121, 24);
+            this.cboFiltro.TabIndex = 12;
             // 
-            // button5
+            // btnBuscar
             // 
-            this.button5.Location = new System.Drawing.Point(778, 495);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(91, 24);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(778, 495);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(91, 24);
+            this.btnBuscar.TabIndex = 13;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // pbxArticulo
             // 
@@ -192,22 +193,21 @@ namespace presentacion
             this.ClientSize = new System.Drawing.Size(1166, 645);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.pbxArticulo);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.cboFiltro);
+            this.Controls.Add(this.lblFiltro);
+            this.Controls.Add(this.cboCriterio);
+            this.Controls.Add(this.lblCriterio);
+            this.Controls.Add(this.cboCampo);
+            this.Controls.Add(this.lblCampo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulos);
-            this.Controls.Add(this.lblFiltro);
+            this.Controls.Add(this.lblFiltroRapido);
             this.Controls.Add(this.txtFiltro);
             this.Name = "FrmCatalogo";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FrmCatalogo_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
@@ -219,18 +219,18 @@ namespace presentacion
         #endregion
 
         private System.Windows.Forms.TextBox txtFiltro;
-        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.Label lblFiltroRapido;
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label lblCampo;
+        private System.Windows.Forms.ComboBox cboCampo;
+        private System.Windows.Forms.Label lblCriterio;
+        private System.Windows.Forms.ComboBox cboCriterio;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.ComboBox cboFiltro;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.PictureBox pbxArticulo;
         private System.Windows.Forms.Button btnDetalle;
     }
