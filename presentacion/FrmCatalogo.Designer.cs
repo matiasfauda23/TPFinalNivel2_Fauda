@@ -30,7 +30,7 @@ namespace presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.txtFiltroRapido = new System.Windows.Forms.TextBox();
             this.lblFiltroRapido = new System.Windows.Forms.Label();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -40,8 +40,8 @@ namespace presentacion
             this.cboCampo = new System.Windows.Forms.ComboBox();
             this.lblCriterio = new System.Windows.Forms.Label();
             this.cboCriterio = new System.Windows.Forms.ComboBox();
-            this.lblFiltro = new System.Windows.Forms.Label();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
+            this.lblFiltroAvanzado = new System.Windows.Forms.Label();
+            this.cboFiltroAvanzado = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.btnDetalle = new System.Windows.Forms.Button();
@@ -49,13 +49,13 @@ namespace presentacion
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtFiltro
+            // txtFiltroRapido
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(370, 23);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(320, 22);
-            this.txtFiltro.TabIndex = 0;
-            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
+            this.txtFiltroRapido.Location = new System.Drawing.Point(370, 23);
+            this.txtFiltroRapido.Name = "txtFiltroRapido";
+            this.txtFiltroRapido.Size = new System.Drawing.Size(320, 22);
+            this.txtFiltroRapido.TabIndex = 0;
+            this.txtFiltroRapido.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // lblFiltroRapido
             // 
@@ -128,7 +128,7 @@ namespace presentacion
             // lblCriterio
             // 
             this.lblCriterio.AutoSize = true;
-            this.lblCriterio.Location = new System.Drawing.Point(320, 495);
+            this.lblCriterio.Location = new System.Drawing.Point(312, 495);
             this.lblCriterio.Name = "lblCriterio";
             this.lblCriterio.Size = new System.Drawing.Size(52, 16);
             this.lblCriterio.TabIndex = 9;
@@ -142,22 +142,23 @@ namespace presentacion
             this.cboCriterio.Size = new System.Drawing.Size(121, 24);
             this.cboCriterio.TabIndex = 10;
             // 
-            // lblFiltro
+            // lblFiltroAvanzado
             // 
-            this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(547, 498);
-            this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(39, 16);
-            this.lblFiltro.TabIndex = 11;
-            this.lblFiltro.Text = "Filtro:";
+            this.lblFiltroAvanzado.AutoSize = true;
+            this.lblFiltroAvanzado.Location = new System.Drawing.Point(547, 498);
+            this.lblFiltroAvanzado.Name = "lblFiltroAvanzado";
+            this.lblFiltroAvanzado.Size = new System.Drawing.Size(39, 16);
+            this.lblFiltroAvanzado.TabIndex = 11;
+            this.lblFiltroAvanzado.Text = "Filtro:";
             // 
-            // cboFiltro
+            // cboFiltroAvanzado
             // 
-            this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Location = new System.Drawing.Point(631, 495);
-            this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(121, 24);
-            this.cboFiltro.TabIndex = 12;
+            this.cboFiltroAvanzado.FormattingEnabled = true;
+            this.cboFiltroAvanzado.Location = new System.Drawing.Point(631, 495);
+            this.cboFiltroAvanzado.Name = "cboFiltroAvanzado";
+            this.cboFiltroAvanzado.Size = new System.Drawing.Size(121, 24);
+            this.cboFiltroAvanzado.TabIndex = 12;
+//            this.cboFiltroAvanzado.SelectedIndexChanged += new System.EventHandler(this.cboFiltroAvanzado_SelectedIndexChanged);
             // 
             // btnBuscar
             // 
@@ -167,6 +168,7 @@ namespace presentacion
             this.btnBuscar.TabIndex = 13;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+//            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // pbxArticulo
             // 
@@ -194,8 +196,8 @@ namespace presentacion
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.cboFiltro);
-            this.Controls.Add(this.lblFiltro);
+            this.Controls.Add(this.cboFiltroAvanzado);
+            this.Controls.Add(this.lblFiltroAvanzado);
             this.Controls.Add(this.cboCriterio);
             this.Controls.Add(this.lblCriterio);
             this.Controls.Add(this.cboCampo);
@@ -205,7 +207,7 @@ namespace presentacion
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.lblFiltroRapido);
-            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.txtFiltroRapido);
             this.Name = "FrmCatalogo";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
@@ -218,7 +220,7 @@ namespace presentacion
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.TextBox txtFiltroRapido;
         private System.Windows.Forms.Label lblFiltroRapido;
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.Button btnAgregar;
@@ -228,8 +230,8 @@ namespace presentacion
         private System.Windows.Forms.ComboBox cboCampo;
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.ComboBox cboCriterio;
-        private System.Windows.Forms.Label lblFiltro;
-        private System.Windows.Forms.ComboBox cboFiltro;
+        private System.Windows.Forms.Label lblFiltroAvanzado;
+        private System.Windows.Forms.ComboBox cboFiltroAvanzado;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.PictureBox pbxArticulo;
         private System.Windows.Forms.Button btnDetalle;

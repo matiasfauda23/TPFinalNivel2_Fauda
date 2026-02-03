@@ -81,7 +81,7 @@ namespace presentacion
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
             List<Articulo> listaFiltrada;
-            string filtro = txtFiltro.Text;
+            string filtro = txtFiltroRapido.Text;
 
             if(filtro.Length >= 2)
             {
@@ -175,24 +175,86 @@ namespace presentacion
 
         private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string opcion = cboCampo.SelectedItem.ToString();
+            // Validamos que haya algo seleccionado para evitar errores
+            if (cboCampo.SelectedItem != null)
+            {
+                string opcion = cboCampo.SelectedItem.ToString();
 
-            //Si cambio de campo, validamos que mostrar en criterio
-            if(opcion == "Precio")
-            {
-                cboCriterio.Items.Clear();
-                cboCriterio.Items.Add("Mayor a");
-                cboCriterio.Items.Add("Menor a");
-                cboCriterio.Items.Add("Igual a");
-            }
-            //Tanto el criterio Nombre como Descripcion se filtran de la misma manera
-            else
-            {
-                cboCriterio.Items.Clear();
-                cboCriterio.Items.Add("Comienza con");
-                cboCriterio.Items.Add("Termina con");
-                cboCriterio.Items.Add("Contiene");
+                if (opcion == "Precio")
+                {
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Mayor a");
+                    cboCriterio.Items.Add("Menor a");
+                    cboCriterio.Items.Add("Igual a");
+                }
+                else
+                {
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Comienza con");
+                    cboCriterio.Items.Add("Termina con");
+                    cboCriterio.Items.Add("Contiene");
+                }
             }
         }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                // 1. Validar que se haya elegido un CAMPO
+                if (cboCampo.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Por favor, seleccione el campo para filtrar.");
+                    return;
+                }
+
+                // 2. Validar que se haya elegido un CRITERIO
+                if (cboCriterio.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Por favor, seleccione el criterio para filtrar.");
+                    return;
+                }
+
+                // 3. Validar PRECIO (Usando cboFiltroAvanzado)
+                if (cboCampo.SelectedItem.ToString() == "Precio")
+                {
+                    if (string.IsNullOrEmpty(cboFiltroAvanzado.Text))
+                    {
+                        MessageBox.Show("Debes cargar un número para filtrar por precio.");
+                        return;
+                    }
+                    if (!(soloNumeros(cboFiltroAvanzado.Text)))
+                    {
+                        MessageBox.Show("Solo nros para filtrar por campo numérico.");
+                        return;
+                    }
+                }
+
+                // 4. Capturar los datos
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+
+                // Aquí tomamos lo que escribiste en tu tercer control:
+                string filtro = cboFiltroAvanzado.Text;
+
+                // 5. Llamada a la base de datos
+                dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
+        }
+
     }
 }

@@ -24,7 +24,7 @@ namespace Negocio
         public AccesoDatos()
         {
             //Leemos la direccion de la conexion del archivo App.config
-            conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["cadenaConexion"].ConnectionString);
+            conexion = new SqlConnection("server=MATIAS\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true");
             comando = new SqlCommand();
         }
 

@@ -18,7 +18,7 @@ namespace Negocio
             try
             {
                 //Traigo los datos de la tabla articulos
-                datos.SetearConsulta("Select A.Id, Codigo, Nombre, A.Descripcion, ImagenUrl, Precio, A.IdMarca, A.IdCategoria, M.Descripcion as Marca, C.Descripcion as Categoria From ARTICULOS A, MARCAS M, CATEGORIAS C Where A.IdMarca = M.Id And A.IdCategoria = C.Id");
+                datos.SetearConsulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, A.IdMarca, A.IdCategoria, M.Descripcion as Marca, C.Descripcion as Categoria From ARTICULOS A, MARCAS M, CATEGORIAS C Where A.IdMarca = M.Id And A.IdCategoria = C.Id");
                 datos.EjecutarLectura();
 
                 //Mientras haya datos para leer los recorro
@@ -116,20 +116,20 @@ namespace Negocio
             try
             {
                 // La consulta base es la misma que listar(), pero le vamos a pegar el WHERE al final
-                string consulta = "Select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, A.ImagenUrl, A.Precio, A.IdMarca, A.IdCategoria From ARTICULOS A, CATEGORIAS C, MARCAS M WHERE A.IdMarca = M.Id And A.IdCategoria = C.Id And ";
+                string consulta = "Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, A.IdMarca, A.IdCategoria, M.Descripcion as Marca, C.Descripcion as Categoria From ARTICULOS A, MARCAS M, CATEGORIAS C Where A.IdMarca = M.Id And A.IdCategoria = C.Id";
 
                 if (campo == "Precio")
                 {
                     switch (criterio)
                     {
                         case "Mayor a":
-                            consulta += "A.Precio > " + filtro;
+                            consulta += " AND A.Precio > " + filtro;
                             break;
                         case "Menor a":
-                            consulta += "A.Precio < " + filtro;
+                            consulta += " AND A.Precio < " + filtro;
                             break;
                         default:
-                            consulta += "A.Precio = " + filtro;
+                            consulta += " AND A.Precio = " + filtro;
                             break;
                     }
                 }
@@ -138,13 +138,13 @@ namespace Negocio
                     switch (criterio)
                     {
                         case "Comienza con":
-                            consulta += "A.Nombre like '" + filtro + "%' ";
+                            consulta += " AND A.Nombre like '" + filtro + "%' ";
                             break;
                         case "Termina con":
-                            consulta += "A.Nombre like '%" + filtro + "'";
+                            consulta += " AND A.Nombre like '%" + filtro + "'";
                             break;
                         default:
-                            consulta += "A.Nombre like '%" + filtro + "%'";
+                            consulta += " AND A.Nombre like '%" + filtro + "%'";
                             break;
                     }
                 }
@@ -153,13 +153,13 @@ namespace Negocio
                     switch (criterio)
                     {
                         case "Comienza con":
-                            consulta += "A.Descripcion like '" + filtro + "%' ";
+                            consulta += " AND A.Descripcion like '" + filtro + "%' ";
                             break;
                         case "Termina con":
-                            consulta += "A.Descripcion like '%" + filtro + "'";
+                            consulta += " AND A.Descripcion like '%" + filtro + "'";
                             break;
                         default:
-                            consulta += "A.Descripcion like '%" + filtro + "%'";
+                            consulta += " AND A.Descripcion like '%" + filtro + "%'";
                             break;
                     }
                 }
@@ -184,23 +184,36 @@ namespace Negocio
         private Articulo mapear(AccesoDatos datos)
         {
             Articulo aux = new Articulo();
-            aux.Id = (int)datos.Lector["Id"];
-            aux.Codigo = (string)datos.Lector["Codigo"];
-            aux.Nombre = (string)datos.Lector["Nombre"];
-            aux.Descripcion = (string)datos.Lector["Descripcion"];
-            aux.Precio = (decimal)datos.Lector["Precio"];
+            try
+            {
 
-            if (!(datos.Lector["ImagenUrl"] is DBNull))
-                aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                aux.Id = (int)datos.Lector["Id"];
+                aux.Codigo = (string)datos.Lector["Codigo"];
+                aux.Nombre = (string)datos.Lector["Nombre"];
 
-            aux.Marca = new Marca();
-            aux.Marca.Id = (int)datos.Lector["IdMarca"];
-            aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                
+                if (!(datos.Lector["Descripcion"] is DBNull))
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
 
-            aux.Categoria = new Categoria();
-            aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
-            aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                
+                if (!(datos.Lector["ImagenUrl"] is DBNull))
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
 
+                aux.Precio = (decimal)datos.Lector["Precio"];
+
+               
+                aux.Marca = new Marca();
+                aux.Marca.Id = (int)datos.Lector["IdMarca"];
+                aux.Marca.Descripcion = (string)datos.Lector["Marca"]; // Ojo con el alias
+
+                aux.Categoria = new Categoria();
+                aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                aux.Categoria.Descripcion = (string)datos.Lector["Categoria"]; // Ojo con el alias
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
             return aux;
         }
     }
