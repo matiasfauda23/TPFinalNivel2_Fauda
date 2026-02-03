@@ -139,22 +139,35 @@ namespace presentacion
 
         private bool validarAlta()
         {
-            //Valido campos vacios
+            //Validar campos vacios
             if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtNombre.Text))
             {
-                MessageBox.Show("Por favor, completa los campos obligatorios (Código y Nombre).");
-                //Devuelvo true si hay un error
-                return true; 
+                MessageBox.Show("Por favor, completa los campos obligatorios (Codigo y Nombre).");
+                return true;
             }
-            //Valido numeros
-            if (!decimal.TryParse(txtPrecio.Text, out _))
+
+            //Validar que sea numerico
+            decimal precio;
+            if (!decimal.TryParse(txtPrecio.Text, out precio))
             {
                 MessageBox.Show("El precio debe ser numérico.");
                 return true;
             }
-            //Si paso todo, entonces esta bien
+
+            //Validar que no sea negativo
+            if (precio < 0)
+            {
+                MessageBox.Show("El precio no puede ser negativo.");
+                return true;
+            }
+
+            // Si paso todo, entonces esta bien
             return false;
         }
 
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

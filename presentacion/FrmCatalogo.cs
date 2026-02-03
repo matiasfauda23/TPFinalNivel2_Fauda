@@ -42,6 +42,9 @@ namespace presentacion
                 dgvArticulos.Columns["Id"].Visible = false;
                 dgvArticulos.Columns["ImagenUrl"].Visible = false;
 
+                //Formato de moneda a la columna precio
+                dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "C2"; 
+
                 //Cargo la primer imagen por defecto
                 cargarImagen(listaArticulo[0].ImagenUrl);
             }
