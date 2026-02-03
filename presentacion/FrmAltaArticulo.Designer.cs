@@ -188,6 +188,7 @@
             this.pbxArticulo.Location = new System.Drawing.Point(497, 43);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(527, 463);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxArticulo.TabIndex = 17;
             this.pbxArticulo.TabStop = false;
             // 

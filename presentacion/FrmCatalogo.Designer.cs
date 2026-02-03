@@ -167,6 +167,7 @@ namespace presentacion
             this.pbxArticulo.Location = new System.Drawing.Point(757, 133);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(302, 308);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxArticulo.TabIndex = 14;
             this.pbxArticulo.TabStop = false;
             // 
