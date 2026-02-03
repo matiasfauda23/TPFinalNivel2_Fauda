@@ -45,6 +45,7 @@ namespace presentacion
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.txtFiltroAvanzado = new System.Windows.Forms.TextBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -123,6 +124,7 @@ namespace presentacion
             this.cboCampo.Name = "cboCampo";
             this.cboCampo.Size = new System.Drawing.Size(121, 24);
             this.cboCampo.TabIndex = 8;
+            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
             // 
             // lblCriterio
             // 
@@ -158,6 +160,7 @@ namespace presentacion
             this.btnFiltro.TabIndex = 13;
             this.btnFiltro.Text = "Buscar";
             this.btnFiltro.UseVisualStyleBackColor = true;
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
             // 
             // pbxArticulo
             // 
@@ -184,11 +187,22 @@ namespace presentacion
             this.txtFiltroAvanzado.Size = new System.Drawing.Size(100, 22);
             this.txtFiltroAvanzado.TabIndex = 16;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(872, 495);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(91, 24);
+            this.btnLimpiar.TabIndex = 17;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // FrmCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 645);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.txtFiltroAvanzado);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.pbxArticulo);
@@ -206,7 +220,7 @@ namespace presentacion
             this.Controls.Add(this.txtFiltro);
             this.Name = "FrmCatalogo";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FrmCatalogo_Load_1);
+            this.Load += new System.EventHandler(this.FrmCatalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
@@ -232,6 +246,7 @@ namespace presentacion
         private System.Windows.Forms.PictureBox pbxArticulo;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.TextBox txtFiltroAvanzado;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
 

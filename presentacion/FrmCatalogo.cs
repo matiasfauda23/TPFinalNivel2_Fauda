@@ -24,6 +24,11 @@ namespace presentacion
         private void FrmCatalogo_Load(object sender, EventArgs e)
         {
             cargar();
+
+            cboCampo.Items.Clear(); 
+            cboCampo.Items.Add("Precio");
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Descripción");
         }
 
         private void cargar()
@@ -99,11 +104,6 @@ namespace presentacion
             dgvArticulos.Columns["Id"].Visible = false;
         }
 
-        private void FrmCatalogo_Load_1(object sender, EventArgs e)
-        {
-            cargar();
-        }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
@@ -170,6 +170,95 @@ namespace presentacion
             {
                 MessageBox.Show("Por favor, seleccione un artículo para ver el detalle.");
             }
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCampo.SelectedItem != null)
+            {
+                string opcion = cboCampo.SelectedItem.ToString();
+
+                if (opcion == "Precio")
+                {
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Mayor a");
+                    cboCriterio.Items.Add("Menor a");
+                    cboCriterio.Items.Add("Igual a");
+                }
+                else
+                {
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Comienza con");
+                    cboCriterio.Items.Add("Termina con");
+                    cboCriterio.Items.Add("Contiene");
+                }
+            }
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                // Validaciones para evitar que explote si el usuario no elige nada
+                if (cboCampo.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Por favor, seleccione el campo para filtrar.");
+                    return;
+                }
+
+                if (cboCriterio.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Por favor, seleccione el criterio para filtrar.");
+                    return;
+                }
+
+                // Validacion de numeros
+                if (cboCampo.SelectedItem.ToString() == "Precio")
+                {
+                    if (string.IsNullOrEmpty(txtFiltroAvanzado.Text))
+                    {
+                        MessageBox.Show("Debes cargar un número para filtrar por precio.");
+                        return;
+                    }
+                    if (!(soloNumeros(txtFiltroAvanzado.Text)))
+                    {
+                        MessageBox.Show("Solo nros para filtrar por campo numérico.");
+                        return;
+                    }
+                }
+
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
+
+                //Filtramos
+                dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                // Si encontramos UN solo caracter que no sea número, devolvemos falso
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            // Si recorrimos todo y no falló, es porque son todos números
+            return true;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            cargar();
+            //Limpieza visual
+            txtFiltroAvanzado.Text = "";
+            cboCampo.SelectedIndex = -1;
+            cboCriterio.SelectedIndex = -1;
         }
     }
 }

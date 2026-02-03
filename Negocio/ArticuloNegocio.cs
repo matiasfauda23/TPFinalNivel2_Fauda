@@ -131,5 +131,119 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
+
+        public List<Articulo> filtrar(string campo, string criterio, string filtro)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, A.IdMarca, A.IdCategoria, M.Descripcion as Marca, C.Descripcion as Categoria From ARTICULOS A, MARCAS M, CATEGORIAS C Where A.IdMarca = M.Id And A.IdCategoria = C.Id ";
+
+                //Agregamos el filtro dinamicamente segun el campo
+                if (campo == "Precio")
+                {
+                    switch (criterio)
+                    {
+                        case "Mayor a":
+                            consulta += " AND A.Precio > " + filtro.Replace(",", ".");
+                            break;
+                        case "Menor a":
+                            consulta += " AND A.Precio < " + filtro.Replace(",", ".");
+                            break;
+                        default:
+                            consulta += " AND A.Precio = " + filtro.Replace(",", ".");
+                            break;
+                    }
+                }
+                else if (campo == "Nombre")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += " AND A.Nombre like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += " AND A.Nombre like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += " AND A.Nombre like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else 
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += " AND A.Descripcion like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += " AND A.Descripcion like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += " AND A.Descripcion like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+               
+
+                //Ejecutamos
+                datos.SetearConsulta(consulta);
+                datos.EjecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    lista.Add(mapear(datos));
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+        private Articulo mapear(AccesoDatos datos)
+        {
+            Articulo aux = new Articulo();
+            try
+            {
+                // Datos basicos
+                aux.Id = (int)datos.Lector["Id"];
+                aux.Codigo = (string)datos.Lector["Codigo"];
+                aux.Nombre = (string)datos.Lector["Nombre"];
+
+                // Validacion de nulos
+                if (!(datos.Lector["Descripcion"] is DBNull))
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+
+                if (!(datos.Lector["ImagenUrl"] is DBNull))
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+
+                aux.Precio = (decimal)datos.Lector["Precio"];
+
+               
+                aux.Marca = new Marca();
+                aux.Marca.Id = (int)datos.Lector["IdMarca"];
+                aux.Marca.Descripcion = (string)datos.Lector["Marca"]; // Ojo: requiere alias "Marca" en SQL
+
+               
+                aux.Categoria = new Categoria();
+                aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                aux.Categoria.Descripcion = (string)datos.Lector["Categoria"]; // Ojo: requiere alias "Categoria" en SQL
+
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
