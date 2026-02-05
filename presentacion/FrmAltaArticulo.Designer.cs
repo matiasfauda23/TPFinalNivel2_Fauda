@@ -51,54 +51,60 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblCodigo.Location = new System.Drawing.Point(141, 46);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(51, 16);
+            this.lblCodigo.Size = new System.Drawing.Size(58, 20);
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Codigo";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblNombre.Location = new System.Drawing.Point(141, 87);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(56, 16);
+            this.lblNombre.Size = new System.Drawing.Size(64, 20);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblDescripcion.Location = new System.Drawing.Point(141, 129);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(79, 16);
+            this.lblDescripcion.Size = new System.Drawing.Size(87, 20);
             this.lblDescripcion.TabIndex = 2;
             this.lblDescripcion.Text = "Descripcion";
             // 
             // lblUrlImagen
             // 
             this.lblUrlImagen.AutoSize = true;
+            this.lblUrlImagen.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblUrlImagen.Location = new System.Drawing.Point(141, 173);
             this.lblUrlImagen.Name = "lblUrlImagen";
-            this.lblUrlImagen.Size = new System.Drawing.Size(69, 16);
+            this.lblUrlImagen.Size = new System.Drawing.Size(78, 20);
             this.lblUrlImagen.TabIndex = 3;
             this.lblUrlImagen.Text = "UrlImagen";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblPrecio.Location = new System.Drawing.Point(141, 214);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(46, 16);
+            this.lblPrecio.Size = new System.Drawing.Size(50, 20);
             this.lblPrecio.TabIndex = 4;
             this.lblPrecio.Text = "Precio";
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
+            this.lblMarca.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblMarca.Location = new System.Drawing.Point(141, 254);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(45, 16);
+            this.lblMarca.Size = new System.Drawing.Size(50, 20);
             this.lblMarca.TabIndex = 5;
             this.lblMarca.Text = "Marca";
             // 
@@ -141,9 +147,10 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblCategoria.Location = new System.Drawing.Point(141, 300);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(66, 16);
+            this.lblCategoria.Size = new System.Drawing.Size(74, 20);
             this.lblCategoria.TabIndex = 11;
             this.lblCategoria.Text = "Categoria";
             // 
@@ -157,6 +164,8 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAceptar.Location = new System.Drawing.Point(144, 367);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(91, 37);
@@ -167,6 +176,8 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancelar.Location = new System.Drawing.Point(277, 367);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(95, 37);
@@ -185,6 +196,7 @@
             // 
             // pbxArticulo
             // 
+            this.pbxArticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxArticulo.Location = new System.Drawing.Point(497, 43);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(527, 463);

@@ -24,7 +24,7 @@ namespace presentacion
         private void FrmCatalogo_Load(object sender, EventArgs e)
         {
             cargar();
-
+            personalizarDiseño();
             cboCampo.Items.Clear(); 
             cboCampo.Items.Add("Precio");
             cboCampo.Items.Add("Nombre");
@@ -129,6 +129,7 @@ namespace presentacion
                 seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 negocio.eliminar(seleccionado.Id);
                 cargar();
+                MessageBox.Show("El articulo fue eliminado con exito");
 
             }
             catch (Exception ex)
@@ -262,6 +263,29 @@ namespace presentacion
             txtFiltroAvanzado.Text = "";
             cboCampo.SelectedIndex = -1;
             cboCriterio.SelectedIndex = -1;
+        }
+
+        private void personalizarDiseño()
+        {
+            dgvArticulos.RowHeadersVisible = false;
+            dgvArticulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            
+            dgvArticulos.AllowUserToResizeColumns = false;
+            dgvArticulos.AllowUserToResizeRows = false;
+
+            
+            dgvArticulos.BackgroundColor = System.Drawing.Color.White; 
+
+            
+            dgvArticulos.EnableHeadersVisualStyles = false; 
+            dgvArticulos.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(64, 64, 64); 
+            dgvArticulos.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White; 
+            dgvArticulos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold); 
+            dgvArticulos.ColumnHeadersHeight = 30;
+
+            dgvArticulos.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SteelBlue; 
+            dgvArticulos.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
         }
     }
 }
