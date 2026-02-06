@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace presentacion
 {
-    public partial class FrmDetalleArticulo : Form
+    public partial class FrmDetalleArticulo : MaterialForm
     {
         //Variable para guardar el articulo en detalle
         private Articulo articulo;

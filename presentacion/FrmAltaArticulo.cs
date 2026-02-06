@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace presentacion
 {
-    public partial class FrmAltaArticulo : Form
+    public partial class FrmAltaArticulo : MaterialForm
     {
         //Variable para guardar el articulo si es una modificacion
         private Articulo articulo = null;

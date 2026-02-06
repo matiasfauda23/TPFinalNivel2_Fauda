@@ -52,7 +52,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblCodigo.Location = new System.Drawing.Point(141, 46);
+            this.lblCodigo.Location = new System.Drawing.Point(140, 100);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(58, 20);
             this.lblCodigo.TabIndex = 0;
@@ -62,7 +62,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblNombre.Location = new System.Drawing.Point(141, 87);
+            this.lblNombre.Location = new System.Drawing.Point(140, 141);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(64, 20);
             this.lblNombre.TabIndex = 1;
@@ -72,7 +72,7 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblDescripcion.Location = new System.Drawing.Point(141, 129);
+            this.lblDescripcion.Location = new System.Drawing.Point(140, 183);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(87, 20);
             this.lblDescripcion.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             this.lblUrlImagen.AutoSize = true;
             this.lblUrlImagen.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblUrlImagen.Location = new System.Drawing.Point(141, 173);
+            this.lblUrlImagen.Location = new System.Drawing.Point(140, 227);
             this.lblUrlImagen.Name = "lblUrlImagen";
             this.lblUrlImagen.Size = new System.Drawing.Size(78, 20);
             this.lblUrlImagen.TabIndex = 3;
@@ -92,7 +92,7 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblPrecio.Location = new System.Drawing.Point(141, 214);
+            this.lblPrecio.Location = new System.Drawing.Point(140, 268);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(50, 20);
             this.lblPrecio.TabIndex = 4;
@@ -102,7 +102,7 @@
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblMarca.Location = new System.Drawing.Point(141, 254);
+            this.lblMarca.Location = new System.Drawing.Point(140, 308);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(50, 20);
             this.lblMarca.TabIndex = 5;
@@ -110,28 +110,28 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(241, 43);
+            this.txtCodigo.Location = new System.Drawing.Point(240, 97);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(121, 22);
             this.txtCodigo.TabIndex = 6;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(241, 84);
+            this.txtNombre.Location = new System.Drawing.Point(240, 138);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 22);
             this.txtNombre.TabIndex = 7;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(241, 126);
+            this.txtDescripcion.Location = new System.Drawing.Point(240, 180);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(121, 22);
             this.txtDescripcion.TabIndex = 8;
             // 
             // txtUrlImagen
             // 
-            this.txtUrlImagen.Location = new System.Drawing.Point(241, 170);
+            this.txtUrlImagen.Location = new System.Drawing.Point(240, 224);
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(121, 22);
             this.txtUrlImagen.TabIndex = 9;
@@ -139,7 +139,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(241, 208);
+            this.txtPrecio.Location = new System.Drawing.Point(240, 262);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(121, 22);
             this.txtPrecio.TabIndex = 10;
@@ -148,7 +148,7 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblCategoria.Location = new System.Drawing.Point(141, 300);
+            this.lblCategoria.Location = new System.Drawing.Point(140, 354);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(74, 20);
             this.lblCategoria.TabIndex = 11;
@@ -157,7 +157,7 @@
             // cboCategoria
             // 
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(241, 297);
+            this.cboCategoria.Location = new System.Drawing.Point(240, 351);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 24);
             this.cboCategoria.TabIndex = 13;
@@ -166,7 +166,7 @@
             // 
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAceptar.Location = new System.Drawing.Point(144, 367);
+            this.btnAceptar.Location = new System.Drawing.Point(143, 421);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(91, 37);
             this.btnAceptar.TabIndex = 14;
@@ -178,7 +178,7 @@
             // 
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCancelar.Location = new System.Drawing.Point(277, 367);
+            this.btnCancelar.Location = new System.Drawing.Point(276, 421);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(95, 37);
             this.btnCancelar.TabIndex = 15;
@@ -189,7 +189,7 @@
             // cboMarca
             // 
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(241, 245);
+            this.cboMarca.Location = new System.Drawing.Point(240, 299);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(121, 24);
             this.cboMarca.TabIndex = 16;
@@ -197,9 +197,9 @@
             // pbxArticulo
             // 
             this.pbxArticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxArticulo.Location = new System.Drawing.Point(497, 43);
+            this.pbxArticulo.Location = new System.Drawing.Point(508, 97);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(527, 463);
+            this.pbxArticulo.Size = new System.Drawing.Size(487, 391);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxArticulo.TabIndex = 17;
             this.pbxArticulo.TabStop = false;
@@ -227,7 +227,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
             this.Name = "FrmAltaArticulo";
-            this.Text = "FrmAltaArticulo";
+            this.Text = "Formulario de alta";
             this.Load += new System.EventHandler(this.FrmAltaArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);

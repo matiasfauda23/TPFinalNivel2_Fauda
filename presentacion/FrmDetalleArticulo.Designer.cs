@@ -43,7 +43,7 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(426, 53);
+            this.txtCodigo.Location = new System.Drawing.Point(430, 109);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(100, 22);
@@ -53,7 +53,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblCodigo.Location = new System.Drawing.Point(279, 56);
+            this.lblCodigo.Location = new System.Drawing.Point(283, 112);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(58, 20);
             this.lblCodigo.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblNombre.Location = new System.Drawing.Point(279, 96);
+            this.lblNombre.Location = new System.Drawing.Point(283, 152);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(64, 20);
             this.lblNombre.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblDescripcion.Location = new System.Drawing.Point(279, 144);
+            this.lblDescripcion.Location = new System.Drawing.Point(283, 200);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(87, 20);
             this.lblDescripcion.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblPrecio.Location = new System.Drawing.Point(279, 191);
+            this.lblPrecio.Location = new System.Drawing.Point(283, 247);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(50, 20);
             this.lblPrecio.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(426, 89);
+            this.txtNombre.Location = new System.Drawing.Point(430, 145);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(100, 22);
@@ -99,7 +99,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(426, 137);
+            this.txtDescripcion.Location = new System.Drawing.Point(430, 193);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.Size = new System.Drawing.Size(100, 22);
@@ -107,7 +107,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(426, 184);
+            this.txtPrecio.Location = new System.Drawing.Point(430, 240);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ReadOnly = true;
             this.txtPrecio.Size = new System.Drawing.Size(100, 22);
@@ -116,9 +116,9 @@
             // pbxArticulo
             // 
             this.pbxArticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxArticulo.Location = new System.Drawing.Point(165, 248);
+            this.pbxArticulo.Location = new System.Drawing.Point(175, 340);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(613, 423);
+            this.pbxArticulo.Size = new System.Drawing.Size(603, 331);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxArticulo.TabIndex = 8;
             this.pbxArticulo.TabStop = false;
@@ -127,7 +127,7 @@
             // 
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCerrar.Location = new System.Drawing.Point(633, 177);
+            this.btnCerrar.Location = new System.Drawing.Point(637, 233);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(84, 34);
             this.btnCerrar.TabIndex = 9;
@@ -151,7 +151,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.txtCodigo);
             this.Name = "FrmDetalleArticulo";
-            this.Text = "FrmDetalleArticulo";
+            this.Text = "Detalle del articulo";
             this.Load += new System.EventHandler(this.FrmDetalleArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
