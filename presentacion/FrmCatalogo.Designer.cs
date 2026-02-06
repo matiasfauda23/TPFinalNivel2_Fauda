@@ -54,7 +54,7 @@ namespace presentacion
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(370, 23);
+            this.txtFiltro.Location = new System.Drawing.Point(396, 42);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(320, 22);
             this.txtFiltro.TabIndex = 0;
@@ -64,7 +64,7 @@ namespace presentacion
             // 
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltro.Location = new System.Drawing.Point(256, 29);
+            this.lblFiltro.Location = new System.Drawing.Point(258, 44);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(91, 20);
             this.lblFiltro.TabIndex = 1;
@@ -73,7 +73,7 @@ namespace presentacion
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(50, 133);
+            this.dgvArticulos.Location = new System.Drawing.Point(50, 198);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.RowTemplate.Height = 24;
@@ -86,7 +86,7 @@ namespace presentacion
             this.btnAgregar.BackColor = System.Drawing.Color.LightBlue;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAgregar.Location = new System.Drawing.Point(921, 66);
+            this.btnAgregar.Location = new System.Drawing.Point(907, 122);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(99, 42);
             this.btnAgregar.TabIndex = 3;
@@ -99,7 +99,7 @@ namespace presentacion
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnModificar.Location = new System.Drawing.Point(1044, 65);
+            this.btnModificar.Location = new System.Drawing.Point(1030, 121);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(99, 44);
             this.btnModificar.TabIndex = 4;
@@ -111,7 +111,7 @@ namespace presentacion
             this.btnEliminar.BackColor = System.Drawing.Color.LightCoral;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEliminar.Location = new System.Drawing.Point(1167, 65);
+            this.btnEliminar.Location = new System.Drawing.Point(1153, 121);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 44);
             this.btnEliminar.TabIndex = 5;
@@ -131,7 +131,7 @@ namespace presentacion
             // cboCampo
             // 
             this.cboCampo.FormattingEnabled = true;
-            this.cboCampo.Location = new System.Drawing.Point(96, 46);
+            this.cboCampo.Location = new System.Drawing.Point(105, 46);
             this.cboCampo.Name = "cboCampo";
             this.cboCampo.Size = new System.Drawing.Size(121, 24);
             this.cboCampo.TabIndex = 8;
@@ -159,7 +159,7 @@ namespace presentacion
             // 
             this.lblFiltroAvanzado.AutoSize = true;
             this.lblFiltroAvanzado.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblFiltroAvanzado.Location = new System.Drawing.Point(480, 50);
+            this.lblFiltroAvanzado.Location = new System.Drawing.Point(462, 49);
             this.lblFiltroAvanzado.Name = "lblFiltroAvanzado";
             this.lblFiltroAvanzado.Size = new System.Drawing.Size(116, 20);
             this.lblFiltroAvanzado.TabIndex = 11;
@@ -169,7 +169,7 @@ namespace presentacion
             // 
             this.btnFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltro.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnFiltro.Location = new System.Drawing.Point(756, 41);
+            this.btnFiltro.Location = new System.Drawing.Point(776, 40);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Size = new System.Drawing.Size(96, 39);
             this.btnFiltro.TabIndex = 13;
@@ -180,7 +180,7 @@ namespace presentacion
             // pbxArticulo
             // 
             this.pbxArticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxArticulo.Location = new System.Drawing.Point(932, 133);
+            this.pbxArticulo.Location = new System.Drawing.Point(941, 198);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(302, 308);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -191,7 +191,7 @@ namespace presentacion
             // 
             this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalle.Location = new System.Drawing.Point(50, 76);
+            this.btnDetalle.Location = new System.Drawing.Point(50, 141);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(120, 33);
             this.btnDetalle.TabIndex = 15;
@@ -201,7 +201,7 @@ namespace presentacion
             // 
             // txtFiltroAvanzado
             // 
-            this.txtFiltroAvanzado.Location = new System.Drawing.Point(610, 50);
+            this.txtFiltroAvanzado.Location = new System.Drawing.Point(608, 46);
             this.txtFiltroAvanzado.Name = "txtFiltroAvanzado";
             this.txtFiltroAvanzado.Size = new System.Drawing.Size(121, 22);
             this.txtFiltroAvanzado.TabIndex = 16;
@@ -210,7 +210,7 @@ namespace presentacion
             // 
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLimpiar.Location = new System.Drawing.Point(872, 41);
+            this.btnLimpiar.Location = new System.Drawing.Point(892, 40);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(99, 39);
             this.btnLimpiar.TabIndex = 17;
@@ -227,7 +227,7 @@ namespace presentacion
             this.gbxFiltros.Controls.Add(this.cboCriterio);
             this.gbxFiltros.Controls.Add(this.btnFiltro);
             this.gbxFiltros.Controls.Add(this.lblFiltroAvanzado);
-            this.gbxFiltros.Location = new System.Drawing.Point(82, 477);
+            this.gbxFiltros.Location = new System.Drawing.Point(114, 573);
             this.gbxFiltros.Name = "gbxFiltros";
             this.gbxFiltros.Size = new System.Drawing.Size(1010, 117);
             this.gbxFiltros.TabIndex = 18;
@@ -249,7 +249,7 @@ namespace presentacion
             this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.txtFiltro);
             this.Name = "FrmCatalogo";
-            this.Text = "FrmCatalogo";
+            this.Text = "Productos";
             this.Load += new System.EventHandler(this.FrmCatalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();

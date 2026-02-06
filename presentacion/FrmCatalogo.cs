@@ -10,17 +10,29 @@ using System.Windows.Forms;
 using Dominio;
 using Negocio;
 using FontAwesome.Sharp; 
-using System.Drawing; 
+using System.Drawing;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace presentacion
 {
-    public partial class FrmCatalogo : Form
+    public partial class FrmCatalogo : MaterialForm
     {
         private List<Articulo> listaArticulo;
         public FrmCatalogo()
         {
 
             InitializeComponent();
+            //Configuracion de MaterialSkin
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            //Configurando la paleta de colores (Azul y Naranja es el clásico)
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue600, Primary.Blue700,
+                Primary.Blue200, Accent.Orange700,
+                TextShade.WHITE);
         }
 
         private void FrmCatalogo_Load(object sender, EventArgs e)
