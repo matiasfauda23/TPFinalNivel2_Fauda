@@ -21,18 +21,13 @@ namespace presentacion
         private List<Articulo> listaArticulo;
         public FrmCatalogo()
         {
-
+            cargarColorPrincipal();
             InitializeComponent();
             //Configuracion de MaterialSkin
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 
-            //Configurando la paleta de colores (Azul y Naranja es el clásico)
-            materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Blue600, Primary.Blue700,
-                Primary.Blue200, Accent.Orange700,
-                TextShade.WHITE);
         }
 
         private void FrmCatalogo_Load(object sender, EventArgs e)
@@ -110,6 +105,7 @@ namespace presentacion
         {
            FrmAltaArticulo alta = new FrmAltaArticulo();
             alta.ShowDialog();
+            cargarColorPrincipal();
             cargar();
         }
 
@@ -178,6 +174,7 @@ namespace presentacion
                 Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 FrmAltaArticulo modificar = new FrmAltaArticulo(seleccionado);
                 modificar.ShowDialog();
+                cargarColorPrincipal();
                 cargar();
             }
             else
@@ -317,6 +314,18 @@ namespace presentacion
 
             dgvArticulos.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SteelBlue; 
             dgvArticulos.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+        }
+
+
+        private void cargarColorPrincipal()
+        {
+            MaterialSkinManager.Instance.ColorScheme = new ColorScheme(
+                Primary.BlueGrey300,
+                Primary.BlueGrey500,
+                Primary.BlueGrey100,
+                Accent.Teal200,
+                TextShade.WHITE
+            );
         }
     }
 }

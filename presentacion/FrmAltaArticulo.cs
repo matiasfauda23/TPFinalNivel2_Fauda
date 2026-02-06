@@ -23,7 +23,15 @@ namespace presentacion
         public FrmAltaArticulo()
         {
             InitializeComponent();
+            MaterialSkinManager.Instance.ColorScheme = new ColorScheme(
+             Primary.Orange500,
+             Primary.Orange700,
+             Primary.Orange100,
+             Accent.Yellow200,
+             TextShade.WHITE
+             );
         }
+
         //Constructor para modificar producto
         public FrmAltaArticulo(Articulo articuloSeleccionado)
         {
@@ -35,39 +43,18 @@ namespace presentacion
 
         private void FrmAltaArticulo_Load(object sender, EventArgs e)
         {
-            MarcaNegocio marcaNegocio = new MarcaNegocio();
-            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-
             try
             {
-                //Llenamos el comboBox de Marcas
-                cboMarca.DataSource = marcaNegocio.listar();
-                //ValueMember es el valor interno
-                cboMarca.ValueMember = "Id";
-                //DisplayMember es lo que se muestra
-                cboMarca.DisplayMember = "Descripcion";
+                cargarDesplegables();
+                configurarEstilo();
 
-                cboCategoria.DataSource = categoriaNegocio.listar();
-                cboCategoria.ValueMember = "Id";
-                cboCategoria.DisplayMember = "Descripcion";
-
-                //Si el articulo es distinto de null, es una modificacion
                 if (articulo != null)
                 {
-                    txtCodigo.Text = articulo.Codigo;
-                    txtNombre.Text = articulo.Nombre;
-                    txtDescripcion.Text = articulo.Descripcion;
-                    txtPrecio.Text = articulo.Precio.ToString();
-                    txtUrlImagen.Text = articulo.ImagenUrl;
-                    cargarImagen(articulo.ImagenUrl);
-                    //Seleccionar la marca y categoria correspondiente en los combobox
-                    cboMarca.SelectedValue = articulo.Marca.Id;
-                    cboCategoria.SelectedValue = articulo.Categoria.Id;
+                    cargarDatosArticulo();
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -170,6 +157,59 @@ namespace presentacion
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void configurarEstilo()
+        {
+            if (articulo != null)
+            {
+                
+                this.Text = "Modificar Artículo";
+                MaterialSkinManager.Instance.ColorScheme = new ColorScheme(
+                    Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE
+                );
+            }
+            else
+            {
+               
+                this.Text = "Nuevo Artículo";
+                MaterialSkinManager.Instance.ColorScheme = new ColorScheme(
+                    Primary.Orange500, Primary.Orange700, Primary.Orange100, Accent.Yellow200, TextShade.WHITE
+                );
+            }
+        }
+
+        private void cargarDesplegables()
+        {
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+
+            // ComboBox Marcas
+            cboMarca.DataSource = marcaNegocio.listar();
+            cboMarca.ValueMember = "Id";
+            cboMarca.DisplayMember = "Descripcion";
+
+            // ComboBox Categorias
+            cboCategoria.DataSource = categoriaNegocio.listar();
+            cboCategoria.ValueMember = "Id";
+            cboCategoria.DisplayMember = "Descripcion";
+        }
+
+        private void cargarDatosArticulo()
+        {
+            // Mapeamos los datos del objeto a los controles
+            txtCodigo.Text = articulo.Codigo;
+            txtNombre.Text = articulo.Nombre;
+            txtDescripcion.Text = articulo.Descripcion;
+            txtPrecio.Text = articulo.Precio.ToString();
+            txtUrlImagen.Text = articulo.ImagenUrl;
+
+            // Cargar la imagen visualmente
+            cargarImagen(articulo.ImagenUrl);
+
+            // Pre-seleccionar los desplegables
+            cboMarca.SelectedValue = articulo.Marca.Id;
+            cboCategoria.SelectedValue = articulo.Categoria.Id;
         }
     }
 }
