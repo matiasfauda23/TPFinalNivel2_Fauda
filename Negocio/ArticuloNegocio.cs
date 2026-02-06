@@ -9,6 +9,11 @@ namespace Negocio
 {
     public class ArticuloNegocio
     {
+        /// <summary>
+        /// Recupera el listado completo de artículos desde la base de datos, incluyendo sus relaciones (Marcas y Categorías).
+        /// </summary>
+        /// <returns>Una colección (List) de objetos Articulo con sus datos mapeados.</returns>
+        /// <exception cref="Exception">Lanza una excepción si falla la conexión o la lectura de datos.</exception>
         public List<Articulo> listar()
         {
             //Creo una nueva lista de articulos
@@ -61,6 +66,12 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
+        /// <summary>
+        /// Inserta un nuevo registro de Artículo en la base de datos.
+        /// </summary>
+        /// <param name="nuevo">Objeto Articulo con la información completa a registrar.</param>
+        /// <exception cref="Exception">Lanza una excepción si ocurre un error durante la ejecución del comando SQL.</exception>
+
         public void agregar(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -132,6 +143,15 @@ namespace Negocio
             }
         }
 
+        /// <summary>
+        /// Consulta la base de datos para filtrar articulos segun criterios dinamicos.
+        /// Construye una consulta SQL bajo demanda concatenando las condiciones.
+        /// </summary>
+        /// <param name="campo">La propiedad por la cual se desea filtrar (ej: Precio, Nombre, Descripción).</param>
+        /// <param name="criterio">El operador lógico a aplicar (ej: Mayor a, Contiene, Termina con).</param>
+        /// <param name="filtro">El valor contra el cual se compara (el texto o número escrito por el usuario).</param>
+        /// <returns>Una lista de objetos Articulo que cumplen con las condiciones.</returns>
+        /// <exception cref="Exception">Lanza una excepción si hay error de conexión a SQL.</exception>
         public List<Articulo> filtrar(string campo, string criterio, string filtro)
         {
             List<Articulo> lista = new List<Articulo>();

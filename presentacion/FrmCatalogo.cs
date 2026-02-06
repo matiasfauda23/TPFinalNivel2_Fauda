@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
+using FontAwesome.Sharp; 
+using System.Drawing; 
 
 namespace presentacion
 {
@@ -29,6 +31,23 @@ namespace presentacion
             cboCampo.Items.Add("Precio");
             cboCampo.Items.Add("Nombre");
             cboCampo.Items.Add("Descripción");
+
+            // Boton de buscar
+            btnFiltro.Image = IconChar.Search.ToBitmap(Color.Black, 30);
+            btnFiltro.TextImageRelation = TextImageRelation.ImageBeforeText; 
+
+            // Boton de agregar
+            btnAgregar.Image = IconChar.Plus.ToBitmap(Color.Green, 30);
+
+            // Boton de modificar
+            btnModificar.Image = IconChar.Pen.ToBitmap(Color.SteelBlue, 30); 
+
+            // Boton de eliminar
+            btnEliminar.Image = IconChar.TrashAlt.ToBitmap(Color.Red, 30); 
+
+            //Boton de limpiar
+            btnLimpiar.Image = IconChar.Broom.ToBitmap(Color.Black, 30);
+            btnLimpiar.TextImageRelation = TextImageRelation.ImageBeforeText; 
         }
 
         private void cargar()

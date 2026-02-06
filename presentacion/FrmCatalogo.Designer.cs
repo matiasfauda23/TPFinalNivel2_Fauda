@@ -86,11 +86,10 @@ namespace presentacion
             this.btnAgregar.BackColor = System.Drawing.Color.LightBlue;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAgregar.Location = new System.Drawing.Point(915, 65);
+            this.btnAgregar.Location = new System.Drawing.Point(921, 66);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(100, 44);
+            this.btnAgregar.Size = new System.Drawing.Size(99, 42);
             this.btnAgregar.TabIndex = 3;
-            this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -104,7 +103,6 @@ namespace presentacion
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(99, 44);
             this.btnModificar.TabIndex = 4;
-            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -117,7 +115,6 @@ namespace presentacion
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 44);
             this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -176,7 +173,7 @@ namespace presentacion
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Size = new System.Drawing.Size(96, 39);
             this.btnFiltro.TabIndex = 13;
-            this.btnFiltro.Text = "Buscar";
+            this.btnFiltro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFiltro.UseVisualStyleBackColor = true;
             this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
             // 
@@ -217,7 +214,6 @@ namespace presentacion
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(99, 39);
             this.btnLimpiar.TabIndex = 17;
-            this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
@@ -253,7 +249,7 @@ namespace presentacion
             this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.txtFiltro);
             this.Name = "FrmCatalogo";
-            this.Text = "Form1";
+            this.Text = "FrmCatalogo";
             this.Load += new System.EventHandler(this.FrmCatalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
