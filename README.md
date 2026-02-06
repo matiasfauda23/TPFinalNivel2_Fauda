@@ -15,13 +15,13 @@ Aplicación de escritorio para la administración integral de artículos comerci
 - **Arquitectura:** Modelo en 3 Capas (Presentación, Negocio, Dominio).
 
 ##  Capturas:
-![Pantalla Principal](screenshots/FrmCatalogo.png)
+![Pantalla Principal](screenshots/PantallaCatalogo.png)
 *Vista del catálogo principal con filtros activos.*
 
-![Formulario Alta](screenshots/PantallaAltaArticulo.png)
+![Formulario Alta](screenshots/PantallaAlta.png)
 *Formulario de alta con validación de precios y campos obligatorios.*
 
-![Pantalla modificar articulo](screenshots/PantallaModificarArticulo.png)
+![Pantalla modificar articulo](screenshots/PantallaModificar.png)
 *Vista que permite la modificacion en la bases de datos de un articulo seleccionado.*
 
 ## Configuración:
