@@ -275,11 +275,10 @@ namespace presentacion
         {
             foreach (char caracter in cadena)
             {
-                // Si encontramos UN solo caracter que no sea número, devolvemos falso
+                // Si encontramos un solo caracter que no sea numero devulvo false
                 if (!(char.IsNumber(caracter)))
                     return false;
             }
-            // Si recorrimos todo y no falló, es porque son todos números
             return true;
         }
 

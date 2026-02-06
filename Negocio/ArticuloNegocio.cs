@@ -29,27 +29,7 @@ namespace Negocio
                 //Mientras haya datos para leer los recorro
                 while (datos.Lector.Read())
                 {
-                    Articulo aux = new Articulo();
-                    aux.Id = (int)datos.Lector["Id"];
-                    aux.Codigo = (string)datos.Lector["Codigo"];
-                    aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.Descripcion = (string)datos.Lector["Descripcion"];
-
-                    // Validacion de nulos para imagen
-                    if (!(datos.Lector["ImagenUrl"] is DBNull))
-                        aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-
-                    aux.Precio = (decimal)datos.Lector["Precio"];
-
-                    // Instanciamos la Marca y cargamos sus datos
-                    aux.Marca = new Marca();
-                    aux.Marca.Id = (int)datos.Lector["IdMarca"];
-                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
-
-                    // Instanciamos la Categoria
-                    aux.Categoria = new Categoria();
-                    aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
-                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    Articulo aux = MapearArticulo(datos);
 
                     // Agregamos el articulo a la lista
                     lista.Add(aux);
@@ -66,6 +46,33 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
+
+        private static Articulo MapearArticulo(AccesoDatos datos)
+        {
+            Articulo aux = new Articulo();
+            aux.Id = (int)datos.Lector["Id"];
+            aux.Codigo = (string)datos.Lector["Codigo"];
+            aux.Nombre = (string)datos.Lector["Nombre"];
+            aux.Descripcion = (string)datos.Lector["Descripcion"];
+
+            // Validacion de nulos para imagen
+            if (!(datos.Lector["ImagenUrl"] is DBNull))
+                aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+
+            aux.Precio = (decimal)datos.Lector["Precio"];
+
+            // Instanciamos la Marca y cargamos sus datos
+            aux.Marca = new Marca();
+            aux.Marca.Id = (int)datos.Lector["IdMarca"];
+            aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+
+            // Instanciamos la Categoria
+            aux.Categoria = new Categoria();
+            aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+            aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+            return aux;
+        }
+
         /// <summary>
         /// Inserta un nuevo registro de Artículo en la base de datos.
         /// </summary>

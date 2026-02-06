@@ -54,7 +54,7 @@ namespace presentacion
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(366, 42);
+            this.txtFiltro.Location = new System.Drawing.Point(384, 42);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(320, 22);
             this.txtFiltro.TabIndex = 0;
@@ -64,7 +64,7 @@ namespace presentacion
             // 
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltro.Location = new System.Drawing.Point(258, 44);
+            this.lblFiltro.Location = new System.Drawing.Point(270, 44);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(70, 20);
             this.lblFiltro.TabIndex = 1;
@@ -219,10 +219,10 @@ namespace presentacion
             // 
             // gbxFiltros
             // 
+            this.gbxFiltros.Controls.Add(this.cboCampo);
             this.gbxFiltros.Controls.Add(this.btnLimpiar);
             this.gbxFiltros.Controls.Add(this.lblCampo);
             this.gbxFiltros.Controls.Add(this.txtFiltroAvanzado);
-            this.gbxFiltros.Controls.Add(this.cboCampo);
             this.gbxFiltros.Controls.Add(this.lblCriterio);
             this.gbxFiltros.Controls.Add(this.cboCriterio);
             this.gbxFiltros.Controls.Add(this.btnFiltro);
@@ -239,12 +239,12 @@ namespace presentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1279, 747);
-            this.Controls.Add(this.gbxFiltros);
-            this.Controls.Add(this.btnDetalle);
-            this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.gbxFiltros);
+            this.Controls.Add(this.btnDetalle);
+            this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.txtFiltro);
