@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
-using FontAwesome.Sharp; 
-using System.Drawing;
+using FontAwesome.Sharp;
 using MaterialSkin;
 using MaterialSkin.Controls;
 

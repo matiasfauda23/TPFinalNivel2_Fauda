@@ -54,7 +54,7 @@ namespace presentacion
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(396, 42);
+            this.txtFiltro.Location = new System.Drawing.Point(366, 42);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(320, 22);
             this.txtFiltro.TabIndex = 0;
@@ -66,9 +66,9 @@ namespace presentacion
             this.lblFiltro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFiltro.Location = new System.Drawing.Point(258, 44);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(91, 20);
+            this.lblFiltro.Size = new System.Drawing.Size(70, 20);
             this.lblFiltro.TabIndex = 1;
-            this.lblFiltro.Text = "FiltroRapido";
+            this.lblFiltro.Text = "Buscador";
             // 
             // dgvArticulos
             // 
